@@ -19,7 +19,7 @@ const Banner = () => {
                                 <div>
                                     <h1 class="text-5xl font-bold">Big Choice Of Plumbing Products!</h1>
                                     <p class="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
-                                    <button class="btn btn-info">Get Started</button>
+                                    <button class="btn btn-primary">Get Started</button>
                                 </div>
                             </div>
                         </div>
@@ -31,7 +31,7 @@ const Banner = () => {
                                 <div>
                                     <h1 class="text-5xl font-bold">Scrowdrivers Proffessional Tools!</h1>
                                     <p class="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
-                                    <button class="btn btn-info">Get Started</button>
+                                    <button class="btn btn-primary">Get Started</button>
                                 </div>
                             </div>
                         </div>
@@ -43,7 +43,7 @@ const Banner = () => {
                                 <div>
                                     <h1 class="text-5xl font-bold">Big Choice Of Plumbing Products!</h1>
                                     <p class="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
-                                    <button class="btn btn-info">Get Started</button>
+                                    <button class="btn btn-primary">Get Started</button>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +55,7 @@ const Banner = () => {
                                 <div>
                                     <h1 class="text-5xl font-bold">Scrowdrivers Proffessional Tools!</h1>
                                     <p class="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
-                                    <button class="btn btn-info">Get Started</button>
+                                    <button class="btn btn-primary">Get Started</button>
                                 </div>
                             </div>
                         </div>
@@ -68,30 +68,30 @@ const Banner = () => {
                     <a href="#item4" class="btn btn-xs">4</a>
                 </div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-3'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-4'>
                 <div class="flex items-center border-2">
-                    <FaShippingFast className='text-7xl mx-3 text-sky-500' />
+                    <FaShippingFast className='text-7xl mx-3 text-primary' />
                     <div>
                         <h3 className='text-lg font-bold'>Free Shipping</h3>
                         <h5 className='text-sm'>For Orders From $50</h5>
                     </div>
                 </div>
                 <div class="flex items-center border-2">
-                    <MdOutlineSupportAgent className='text-7xl mx-3 text-sky-500' />
+                    <MdOutlineSupportAgent className='text-7xl mx-3 text-primary' />
                     <div>
                         <h3 className='text-lg font-bold'>Support 24/7</h3>
                         <h5 className='text-sm'>Call us anytime</h5>
                     </div>
                 </div>
                 <div class="flex items-center border-2">
-                    <RiSafe2Fill className='text-7xl mx-3 text-sky-500' />
+                    <RiSafe2Fill className='text-7xl mx-3 text-primary' />
                     <div>
                         <h3 className='text-lg font-bold'>100% Safety</h3>
                         <h5 className='text-sm'>Only secure payments</h5>
                     </div>
                 </div>
                 <div class="flex items-center border-2">
-                    <MdLocalOffer className='text-7xl mx-3 text-sky-500' />
+                    <MdLocalOffer className='text-7xl mx-3 text-primary' />
                     <div>
                         <h3 className='text-lg font-bold'>Hot Offers</h3>
                         <h5 className='text-sm'>Discounts up to 90%</h5>
