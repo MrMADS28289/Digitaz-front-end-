@@ -4,7 +4,7 @@ import logo from '../../Assests/logo-1.svg';
 
 const NavBar = () => {
     return (
-        <div class="navbar bg-gray-400 px-3 text-white">
+        <div class="navbar bg-gray-400 px-3 ">
             <div class="navbar-start">
                 <div class="dropdown">
                     <label tabindex="0" class="btn btn-ghost lg:hidden">
