@@ -15,7 +15,7 @@ const Banner = () => {
                     <div id="item1" class="carousel-item w-full">
                         <div class="hero min-h-screen bg-base-200">
                             <div class="hero-content flex-col lg:flex-row">
-                                <img src={slide2} class="max-w-sm rounded-lg shadow-2xl" />
+                                <img src={slide2} class="max-w-sm rounded-lg shadow-2xl" alt='' />
                                 <div>
                                     <h1 class="text-5xl font-bold">Big Choice Of Plumbing Products!</h1>
                                     <p class="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
@@ -27,7 +27,7 @@ const Banner = () => {
                     <div id="item2" class="carousel-item w-full">
                         <div class="hero min-h-screen bg-base-200">
                             <div class="hero-content flex-col lg:flex-row">
-                                <img src={slide} class="max-w-sm rounded-lg shadow-2xl" />
+                                <img src={slide} class="max-w-sm rounded-lg shadow-2xl" alt='' />
                                 <div>
                                     <h1 class="text-5xl font-bold">Scrowdrivers Proffessional Tools!</h1>
                                     <p class="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
@@ -39,7 +39,7 @@ const Banner = () => {
                     <div id="item3" class="carousel-item w-full">
                         <div class="hero min-h-screen bg-base-200">
                             <div class="hero-content flex-col lg:flex-row">
-                                <img src={slide3} class="max-w-sm rounded-lg shadow-2xl" />
+                                <img src={slide3} class="max-w-sm rounded-lg shadow-2xl" alt='' />
                                 <div>
                                     <h1 class="text-5xl font-bold">Big Choice Of Plumbing Products!</h1>
                                     <p class="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
@@ -51,7 +51,7 @@ const Banner = () => {
                     <div id="item4" class="carousel-item w-full">
                         <div class="hero min-h-screen bg-base-200">
                             <div class="hero-content flex-col lg:flex-row">
-                                <img src={slide1} class="max-w-sm rounded-lg shadow-2xl" />
+                                <img src={slide1} class="max-w-sm rounded-lg shadow-2xl" alt='' />
                                 <div>
                                     <h1 class="text-5xl font-bold">Scrowdrivers Proffessional Tools!</h1>
                                     <p class="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>

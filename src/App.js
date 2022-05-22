@@ -17,7 +17,6 @@ function App() {
   return (
     <HelmetProvider>
       <NavBar >
-        <button data-toggle-theme="dark,light" data-act-class="ACTIVECLASS"></button>
         <Routes>
           {
             PublicRoute.map(({ path, Component }, index) => (
