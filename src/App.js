@@ -1,10 +1,12 @@
 import { HelmetProvider } from 'react-helmet-async';
 import { Route, Routes } from 'react-router-dom';
-import Home from './Pages/Home/Home';
 import NavBar from './Pages/Shared/NavBar';
 import NotFound from './Pages/Shared/NotFound';
 import { themeChange } from 'theme-change'
 import { useEffect } from 'react';
+import PublicRoute from './Pages/Routes/PublicRoute';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -15,11 +17,16 @@ function App() {
   return (
     <HelmetProvider>
       <NavBar >
+        <button data-toggle-theme="dark,light" data-act-class="ACTIVECLASS"></button>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/home' element={<Home />} />
+          {
+            PublicRoute.map(({ path, Component }, index) => (
+              <Route key={index} path={path} element={<Component />} />
+            ))
+          }
           <Route path='*' element={<NotFound />} />
         </Routes>
+        <ToastContainer />
       </NavBar>
     </HelmetProvider>
   );

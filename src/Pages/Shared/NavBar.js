@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { themeChange } from 'theme-change'
 import logo from '../../Assests/logo-1.svg';
 
+
 const NavBar = ({ children }) => {
+
+    useEffect(() => {
+        themeChange(false)
+    }, [])
+
     return (
         <div class="drawer drawer-end">
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
