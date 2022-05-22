@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import PublicRoute from './Pages/Routes/PublicRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from './Pages/Shared/Footer';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           }
           <Route path='*' element={<NotFound />} />
         </Routes>
+        <Footer />
         <ToastContainer />
       </NavBar>
     </HelmetProvider>

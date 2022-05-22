@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useProducts from '../Hooks/useProducts';
 import Loading from '../Shared/Loading';
+import { BsArrowRightCircleFill } from 'react-icons/bs';
 
 const Products = () => {
     const [products, isLoading, error] = useProducts();
@@ -35,6 +37,7 @@ const Products = () => {
                     ))
                 }
             </div>
+            <Link className='flex justify-center items-center text-xl font-bold mb-6' to='/products' ><BsArrowRightCircleFill className='mr-3' />  See All</Link>
         </>
     );
 };

@@ -68,7 +68,7 @@ const Banner = () => {
                     <a href="#item4" class="btn btn-xs">4</a>
                 </div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-4'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-20 m-4'>
                 <div class="flex items-center border-2">
                     <FaShippingFast className='text-7xl mx-3 text-primary' />
                     <div>
