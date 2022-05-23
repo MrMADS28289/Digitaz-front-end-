@@ -18,6 +18,7 @@ import ManageOrders from './Pages/Dashboard/ManageOrders';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
+import Purcess from './Pages/Purcess/Purcess';
 
 function App() {
 
@@ -38,6 +39,11 @@ function App() {
           <Route path='/profile' element={
             <RequerAuth>
               <Profile />
+            </RequerAuth>} />
+
+          <Route path='/purcess/:id' element={
+            <RequerAuth>
+              <Purcess />
             </RequerAuth>} />
 
           <Route path='/dashboard' element={

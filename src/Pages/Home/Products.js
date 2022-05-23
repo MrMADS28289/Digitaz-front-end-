@@ -30,7 +30,7 @@ const Products = () => {
                                 <p className='text-xs font-bold'>Minimum Order: {minOrder}</p>
                                 <p>{description}</p>
                                 <div className="card-actions justify-end">
-                                    <button className="btn btn-primary">Order Now</button>
+                                    <Link to={`/purcess/${_id}`} className="btn btn-primary">Order Now</Link>
                                 </div>
                             </div>
                         </div>

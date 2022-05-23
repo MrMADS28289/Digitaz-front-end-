@@ -6,6 +6,7 @@ import slide3 from '../../Assests/Slide/slide3.jpg';
 import { FaShippingFast } from 'react-icons/fa';
 import { RiSafe2Fill } from 'react-icons/ri';
 import { MdLocalOffer, MdOutlineSupportAgent } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -19,7 +20,7 @@ const Banner = () => {
                                 <div>
                                     <h1 className="text-5xl font-bold">Big Choice Of Plumbing Products!</h1>
                                     <p className="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
-                                    <button className="btn btn-primary">Get Started</button>
+                                    <Link to='/products' className="btn btn-primary">Get Started</Link>
                                 </div>
                             </div>
                         </div>
@@ -31,7 +32,7 @@ const Banner = () => {
                                 <div>
                                     <h1 className="text-5xl font-bold">Scrowdrivers Proffessional Tools!</h1>
                                     <p className="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
-                                    <button className="btn btn-primary">Get Started</button>
+                                    <Link to='/products' className="btn btn-primary">Get Started</Link>
                                 </div>
                             </div>
                         </div>
@@ -43,7 +44,7 @@ const Banner = () => {
                                 <div>
                                     <h1 className="text-5xl font-bold">Big Choice Of Plumbing Products!</h1>
                                     <p className="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
-                                    <button className="btn btn-primary">Get Started</button>
+                                    <Link to='/products' className="btn btn-primary">Get Started</Link>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +56,7 @@ const Banner = () => {
                                 <div>
                                     <h1 className="text-5xl font-bold">Scrowdrivers Proffessional Tools!</h1>
                                     <p className="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
-                                    <button className="btn btn-primary">Get Started</button>
+                                    <Link to='/products' className="btn btn-primary">Get Started</Link>
                                 </div>
                             </div>
                         </div>

@@ -1,8 +1,8 @@
-import Dashboard from '../Dashboard/Dashboard';
 import Profile from '../Profile/Profile';
+import Purcess from '../Purcess/Purcess';
 
 const PrivateRoute = [
-    { name: 'Dashboard', path: '/dashboard', Component: Dashboard },
+    { name: 'Purcess', path: '/purcess', Component: Purcess },
     { name: 'Profile', path: '/profile', Component: Profile },
 ]
 
