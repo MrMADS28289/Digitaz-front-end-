@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -16,13 +16,15 @@ const Regester = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
     const [token] = useToken(user || gUser);
 
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
 
     let signInError;
 
@@ -35,7 +37,7 @@ const Regester = () => {
     }
 
     if (token) {
-        navigate('/appointment');
+        navigate(from, { replace: true });
     }
 
     const onSubmit = async data => {
@@ -125,7 +127,9 @@ const Regester = () => {
                     </form>
                     <p><small>Already have an account? <Link className='text-primary' to="/login">Login</Link></small></p>
                     <div className="divider">OR</div>
-                    <button className='flex text-lg font-bold bg-gray-100 rounded-box place-items-center px-10 py-2 shadow-2xl'><FcGoogle className='text-5xl' /> Continue With Google</button>
+                    <button
+                        onClick={() => signInWithGoogle()}
+                        className='flex text-lg font-bold bg-gray-100 rounded-box place-items-center px-10 py-2 shadow-2xl'><FcGoogle className='text-5xl' /> Continue With Google</button>
 
                 </div>
             </div>

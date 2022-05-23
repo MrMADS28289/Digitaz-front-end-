@@ -11,86 +11,86 @@ const Banner = () => {
     return (
         <section>
             <div>
-                <div class="carousel w-full">
-                    <div id="item1" class="carousel-item w-full">
-                        <div class="hero min-h-screen bg-base-200">
-                            <div class="hero-content flex-col lg:flex-row">
-                                <img src={slide2} class="max-w-sm rounded-lg shadow-2xl" alt='' />
+                <div className="carousel w-full">
+                    <div id="item1" className="carousel-item w-full">
+                        <div className="hero min-h-screen bg-base-200">
+                            <div className="hero-content flex-col lg:flex-row">
+                                <img src={slide2} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                                 <div>
-                                    <h1 class="text-5xl font-bold">Big Choice Of Plumbing Products!</h1>
-                                    <p class="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
-                                    <button class="btn btn-primary">Get Started</button>
+                                    <h1 className="text-5xl font-bold">Big Choice Of Plumbing Products!</h1>
+                                    <p className="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
+                                    <button className="btn btn-primary">Get Started</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="item2" class="carousel-item w-full">
-                        <div class="hero min-h-screen bg-base-200">
-                            <div class="hero-content flex-col lg:flex-row">
-                                <img src={slide} class="max-w-sm rounded-lg shadow-2xl" alt='' />
+                    <div id="item2" className="carousel-item w-full">
+                        <div className="hero min-h-screen bg-base-200">
+                            <div className="hero-content flex-col lg:flex-row">
+                                <img src={slide} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                                 <div>
-                                    <h1 class="text-5xl font-bold">Scrowdrivers Proffessional Tools!</h1>
-                                    <p class="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
-                                    <button class="btn btn-primary">Get Started</button>
+                                    <h1 className="text-5xl font-bold">Scrowdrivers Proffessional Tools!</h1>
+                                    <p className="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
+                                    <button className="btn btn-primary">Get Started</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="item3" class="carousel-item w-full">
-                        <div class="hero min-h-screen bg-base-200">
-                            <div class="hero-content flex-col lg:flex-row">
-                                <img src={slide3} class="max-w-sm rounded-lg shadow-2xl" alt='' />
+                    <div id="item3" className="carousel-item w-full">
+                        <div className="hero min-h-screen bg-base-200">
+                            <div className="hero-content flex-col lg:flex-row">
+                                <img src={slide3} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                                 <div>
-                                    <h1 class="text-5xl font-bold">Big Choice Of Plumbing Products!</h1>
-                                    <p class="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
-                                    <button class="btn btn-primary">Get Started</button>
+                                    <h1 className="text-5xl font-bold">Big Choice Of Plumbing Products!</h1>
+                                    <p className="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
+                                    <button className="btn btn-primary">Get Started</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="item4" class="carousel-item w-full">
-                        <div class="hero min-h-screen bg-base-200">
-                            <div class="hero-content flex-col lg:flex-row">
-                                <img src={slide1} class="max-w-sm rounded-lg shadow-2xl" alt='' />
+                    <div id="item4" className="carousel-item w-full">
+                        <div className="hero min-h-screen bg-base-200">
+                            <div className="hero-content flex-col lg:flex-row">
+                                <img src={slide1} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                                 <div>
-                                    <h1 class="text-5xl font-bold">Scrowdrivers Proffessional Tools!</h1>
-                                    <p class="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
-                                    <button class="btn btn-primary">Get Started</button>
+                                    <h1 className="text-5xl font-bold">Scrowdrivers Proffessional Tools!</h1>
+                                    <p className="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
+                                    <button className="btn btn-primary">Get Started</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-center w-full py-2 gap-2">
-                    <a href="#item1" class="btn btn-xs">1</a>
-                    <a href="#item2" class="btn btn-xs">2</a>
-                    <a href="#item3" class="btn btn-xs">3</a>
-                    <a href="#item4" class="btn btn-xs">4</a>
+                <div className="flex justify-center w-full py-2 gap-2">
+                    <a href="#item1" className="btn btn-xs">1</a>
+                    <a href="#item2" className="btn btn-xs">2</a>
+                    <a href="#item3" className="btn btn-xs">3</a>
+                    <a href="#item4" className="btn btn-xs">4</a>
                 </div>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-20 m-4'>
-                <div class="flex items-center border-2">
+                <div className="flex items-center border-2">
                     <FaShippingFast className='text-7xl mx-3 text-primary' />
                     <div>
                         <h3 className='text-lg font-bold'>Free Shipping</h3>
                         <h5 className='text-sm'>For Orders From $50</h5>
                     </div>
                 </div>
-                <div class="flex items-center border-2">
+                <div className="flex items-center border-2">
                     <MdOutlineSupportAgent className='text-7xl mx-3 text-primary' />
                     <div>
                         <h3 className='text-lg font-bold'>Support 24/7</h3>
                         <h5 className='text-sm'>Call us anytime</h5>
                     </div>
                 </div>
-                <div class="flex items-center border-2">
+                <div className="flex items-center border-2">
                     <RiSafe2Fill className='text-7xl mx-3 text-primary' />
                     <div>
                         <h3 className='text-lg font-bold'>100% Safety</h3>
                         <h5 className='text-sm'>Only secure payments</h5>
                     </div>
                 </div>
-                <div class="flex items-center border-2">
+                <div className="flex items-center border-2">
                     <MdLocalOffer className='text-7xl mx-3 text-primary' />
                     <div>
                         <h3 className='text-lg font-bold'>Hot Offers</h3>

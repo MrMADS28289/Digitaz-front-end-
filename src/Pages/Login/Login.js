@@ -1,42 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import useToken from '../../Hooks/useToken';
+import Loading from '../Shared/Loading';
 
 const Login = () => {
-    // const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
-    // const [
-    //     signInWithEmailAndPassword,
-    //     user,
-    //     loading,
-    //     error,
-    // ] = useSignInWithEmailAndPassword(auth);
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
 
-    // const [token] = useToken(user || gUser);
+    const [token] = useToken(user || gUser);
 
-    // let signInError;
-    // const navigate = useNavigate();
-    // const location = useLocation();
-    // let from = location.state?.from?.pathname || "/";
+    let signInError;
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
 
-    // useEffect( () =>{
-    //     if (token) {
-    //         navigate(from, { replace: true });
-    //     }
-    // }, [token, from, navigate])
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate])
 
-    // if (loading || gLoading) {
-    //     return <Loading></Loading>
-    // }
+    if (loading || gLoading) {
+        return <Loading></Loading>
+    }
 
-    // if(error || gError){
-    //     signInError= <p className='text-red-500'><small>{error?.message || gError?.message }</small></p>
-    // }
+    if (error || gError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
+    }
 
     const onSubmit = data => {
-        console.log(data);
-        // signInWithEmailAndPassword(data.email, data.password);
+        signInWithEmailAndPassword(data.email, data.password);
     }
 
     return (
@@ -95,12 +98,14 @@ const Login = () => {
                             </label>
                         </div>
 
-                        {/* {signInError} */}
+                        {signInError}
                         <input className='btn btn-primary w-full max-w-xs' type="submit" value="Login" />
                     </form>
                     <p><small>New to Digitaz? <Link className='text-primary' to="/regester">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
-                    <button className='flex text-lg font-bold bg-gray-100 rounded-box place-items-center px-10 py-2 shadow-2xl'><FcGoogle className='text-5xl' /> Continue With Google</button>
+                    <button
+                        onClick={() => signInWithGoogle()}
+                        className='flex text-lg font-bold bg-gray-100 rounded-box place-items-center px-10 py-2 shadow-2xl'><FcGoogle className='text-5xl' /> Continue With Google</button>
 
                 </div>
             </div>

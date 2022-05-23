@@ -26,10 +26,10 @@ const Review = () => {
                 {
                     reviews.slice(0, 20).reverse().map(({ _id, name, img, description, review }) => (
                         <SwiperSlide key={_id}>
-                            <div class="card lg:card-side bg-base-300 shadow-xl mb-10 w-2/4">
+                            <div className="card lg:card-side bg-base-300 shadow-xl mb-10 w-2/4">
                                 <figure><img src={img} alt="Album" /></figure>
-                                <div class="card-body w-2/4">
-                                    <h2 class="card-title">{name}</h2>
+                                <div className="card-body w-2/4">
+                                    <h2 className="card-title">{name}</h2>
                                     <h3 className='card-title'>Ratings: {review}</h3>
                                     <p>{description}</p>
                                 </div>
