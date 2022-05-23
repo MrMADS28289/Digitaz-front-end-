@@ -3,8 +3,9 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
-import useToken from '../../Hooks/useToken';
+import useToken from '../Hooks/useToken';
 import Loading from '../Shared/Loading';
 
 const Login = () => {
@@ -27,6 +28,7 @@ const Login = () => {
     useEffect(() => {
         if (token) {
             navigate(from, { replace: true });
+            toast.success('Login Success.')
         }
     }, [token, from, navigate])
 

@@ -2,10 +2,11 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import useToken from '../../Hooks/useToken';
+import useToken from '../Hooks/useToken';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import Loading from '../Shared/Loading';
 import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
 
 const Regester = () => {
 
@@ -38,12 +39,12 @@ const Regester = () => {
 
     if (token) {
         navigate(from, { replace: true });
+        toast.success('Regester Success.')
     }
 
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
-        console.log('update done');
     }
 
     return (

@@ -1,7 +1,11 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { themeChange } from 'theme-change'
 import logo from '../../Assests/logo-1.svg';
+import auth from '../../firebase.init';
 
 
 const NavBar = ({ children }) => {
@@ -9,6 +13,12 @@ const NavBar = ({ children }) => {
     useEffect(() => {
         themeChange(false)
     }, [])
+    const [user] = useAuthState(auth);
+
+    const handleLogout = () => {
+        signOut(auth);
+        toast.success('Logout Success')
+    }
 
     return (
         <div className="drawer drawer-end">
@@ -26,12 +36,31 @@ const NavBar = ({ children }) => {
                         <ul className="menu menu-horizontal text-white">
                             <li><NavLink to='/home' >Home</NavLink></li>
                             <li><NavLink to='/products' >Products</NavLink></li>
-                            <li><NavLink to='/dashboard' >Dashboard</NavLink></li>
-                            <li><NavLink to='/profile' >My Profile</NavLink></li>
+                            {
+                                user ?
+                                    <li><NavLink to='/dashboard' >Dashboard</NavLink></li>
+                                    :
+                                    ''
+                            }
+                            {
+                                user ?
+                                    <li><NavLink to='/profile' >My Profile</NavLink></li>
+                                    :
+                                    ''
+                            }
                             <li><NavLink to='/portfolio' >Portfolio</NavLink></li>
                             <li><NavLink to='/blog' >Blog</NavLink></li>
-                            <li><NavLink to='/login' >Login</NavLink></li>
-                            <li><NavLink to='/regester' >Regester</NavLink></li>
+                            {
+                                user ?
+
+                                    <li><button
+                                        onClick={handleLogout}
+                                        className=''>Logout</button></li>
+                                    :
+
+                                    <li><NavLink to='/login' >Login</NavLink></li>
+                            }
+                            <li><p>{user?.displayName}</p></li>
                             <label className="swap swap-rotate">
                                 <input
                                     data-toggle-theme="dark,light" data-act-className="ACTIVECLASS"
@@ -41,7 +70,6 @@ const NavBar = ({ children }) => {
                                 <svg className="swap-off fill-current w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" /></svg>
 
                             </label>
-                            {/* <button >dfsd</button> */}
                         </ul>
                     </div>
                 </div>
@@ -50,15 +78,33 @@ const NavBar = ({ children }) => {
             <div className="drawer-side">
                 <label for="my-drawer-3" className="drawer-overlay"></label>
                 <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
-                    {/* <!-- Sidebar content here --> */}
                     <li><NavLink to='/home' >Home</NavLink></li>
                     <li><NavLink to='/products' >Products</NavLink></li>
-                    <li><NavLink to='/dashboard' >Dashboard</NavLink></li>
-                    <li><NavLink to='/profile' >My Profile</NavLink></li>
+                    {
+                        user ?
+                            <li><NavLink to='/dashboard' >Dashboard</NavLink></li>
+                            :
+                            ''
+                    }
+                    {
+                        user ?
+                            <li><NavLink to='/profile' >My Profile</NavLink></li>
+                            :
+                            ''
+                    }
                     <li><NavLink to='/portfolio' >Portfolio</NavLink></li>
                     <li><NavLink to='/blog' >Blog</NavLink></li>
-                    <li><NavLink to='/login' >Login</NavLink></li>
-                    <li><NavLink to='/regester' >Regester</NavLink></li>
+                    {
+                        user ?
+
+                            <li><button
+                                onClick={handleLogout}
+                                className=''>Logout</button></li>
+                            :
+
+                            <li><NavLink to='/login' >Login</NavLink></li>
+                    }
+                    <li><p>{user?.displayName}</p></li>
                     <label className="swap swap-rotate">
                         <input
                             data-toggle-theme="dark,light" data-act-className="ACTIVECLASS"
