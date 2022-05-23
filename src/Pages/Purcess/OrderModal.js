@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 const OrderModal = ({ order, setOrder }) => {
 
-    const { productName, userName, email, quantity } = order;
+    const { productName, userName, email, quantity, price } = order;
     const navigate = useNavigate();
 
     const handleOrder = (e) => {
@@ -14,7 +14,7 @@ const OrderModal = ({ order, setOrder }) => {
         const address = e.target.address.value;
         const country = e.target.country.value;
         const phone = e.target.phone.value;
-        const order = { userName, email, country, address, phone, productName, quantity }
+        const order = { userName, email, country, address, phone, productName, quantity, price, paid: false }
 
         fetch('http://localhost:5000/order', {
             method: 'POST',

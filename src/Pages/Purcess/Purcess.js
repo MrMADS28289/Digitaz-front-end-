@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
@@ -12,7 +12,8 @@ const Purcess = () => {
     const { id } = useParams();
     const [user] = useAuthState(auth);
     const [quantity, setQuantity] = useState(0);
-    const [order, setOrder] = useState()
+    const [order, setOrder] = useState();
+    const [price, setPrice] = useState(0);
 
     const { data: product, isLoading, error } = useQuery('purcess', () => fetch(`http://localhost:5000/product/${id}`).then(res => res.json()))
 
@@ -29,8 +30,11 @@ const Purcess = () => {
 
         const quantity = e.target.quantity.value;
 
-        if (quantity > minOrder && quantity < stock) {
+        if (quantity >= minOrder && quantity <= stock) {
             setQuantity(quantity)
+            const divide = unitPrice / minOrder;
+            const price = divide * quantity;
+            setPrice(price);
         }
         else {
             toast.error('Please enter a valid quantity!')
@@ -39,7 +43,7 @@ const Purcess = () => {
     }
 
     const handleSetOrder = () => {
-        const order = { productName: name, userName: user.displayName, email: user.email, quantity, paid: false }
+        const order = { productName: name, userName: user.displayName, email: user.email, quantity, price, paid: false }
         setOrder(order)
     }
 
@@ -54,6 +58,12 @@ const Purcess = () => {
                         <h4 className='text-sm font-bold'>Unit Price: ${unitPrice}</h4>
                         <p className='text-xs font-bold'>Stock: {stock}</p>
                         <p className='text-xs font-bold'>Minimum Order: {minOrder}</p>
+                        {
+                            quantity !== 0 && <p>You order quantity: {quantity} <br /> <small className='text-sky-500'>You can change quantity</small></p>
+                        }
+                        {
+                            price !== 0 && <p className='text-xs font-bold'>Total price: ${price}</p>
+                        }
                         <form onSubmit={handleQuantity} className='my-2 flex'>
                             <input type="number" name='quantity' placeholder="Enter quantity" class="input input-bordered input-xs w-full max-w-xs" />
                             <input type='submit' value='Add' class="btn btn-xs btn-primary" />
