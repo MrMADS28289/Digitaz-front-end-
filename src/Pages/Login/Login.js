@@ -4,59 +4,107 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+    // const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const { register, formState: { errors }, handleSubmit } = useForm();
+    // const [
+    //     signInWithEmailAndPassword,
+    //     user,
+    //     loading,
+    //     error,
+    // ] = useSignInWithEmailAndPassword(auth);
 
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    // const [token] = useToken(user || gUser);
+
+    // let signInError;
+    // const navigate = useNavigate();
+    // const location = useLocation();
+    // let from = location.state?.from?.pathname || "/";
+
+    // useEffect( () =>{
+    //     if (token) {
+    //         navigate(from, { replace: true });
+    //     }
+    // }, [token, from, navigate])
+
+    // if (loading || gLoading) {
+    //     return <Loading></Loading>
+    // }
+
+    // if(error || gError){
+    //     signInError= <p className='text-red-500'><small>{error?.message || gError?.message }</small></p>
+    // }
+
+    const onSubmit = data => {
+        console.log(data);
+        // signInWithEmailAndPassword(data.email, data.password);
+    }
 
     return (
-        <div className='flex justify-center flex-col items-center my-10'>
-            <h3 className='text-2xl text-center font-bold mb-8'><span className=' border-b-2 border-primary'>Please Login</span></h3>
-            <div class="flex flex-col w-full md:w-2/4 justify-center items-center" >
-                <div class="hero w-full">
-                    <div class="hero-content flex-col lg:flex-row-reverse">
-                        <form
-                            onSubmit={onSubmit}
-                            class="card w-full shadow-2xl bg-base-100">
-                            <div class="card-body w-full">
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Email</span>
-                                    </label>
-                                    <input
-                                        {...register("email",
-                                            {
-                                                required: true,
-                                                pattern: /.+@globex\.com/i
-                                            })}
-                                        type="text" placeholder="Your Email" class="input input-bordered" />
-                                </div>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Password</span>
-                                    </label>
-                                    <input
-                                        {...register("password",
-                                            {
-                                                required: true,
-                                                min: 6,
-                                            })}
-                                        type="text" placeholder="password" class="input input-bordered" />
-                                    <label class="label">
-                                        <button class="label-text-alt text-red-500 link link-hover mt-7">Forgot password?</button>
-                                    </label>
-                                    <Link to='/regester' class="text-sky-500 label-text-alt link link-hover">New to Digitaz? Create a account</Link>
-                                </div>
-                                <div class="form-control mt-6">
-                                    <input type='submit' value='Login' class="btn btn-primary" />
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+        <div className='flex h-screen justify-center items-center my-10'>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h3 className='text-2xl text-center font-bold mb-8'><span className=' border-b-2 border-primary'>Login</span></h3>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input
+                                type="email"
+                                placeholder="Your Email"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("email", {
+                                    required: {
+                                        value: true,
+                                        message: 'Email is Required'
+                                    },
+                                    pattern: {
+                                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                                        message: 'Provide a valid Email'
+                                    }
+                                })}
+                            />
+                            <label className="label">
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                            </label>
+                        </div>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Password</span>
+                            </label>
+                            <input
+                                type="password"
+                                placeholder="Password"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("password", {
+                                    required: {
+                                        value: true,
+                                        message: 'Password is Required'
+                                    },
+                                    minLength: {
+                                        value: 6,
+                                        message: 'Must be 6 characters or longer'
+                                    }
+                                })}
+                            />
+                            <label className="label">
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                            </label>
+                        </div>
+
+                        {/* {signInError} */}
+                        <input className='btn btn-primary w-full max-w-xs' type="submit" value="Login" />
+                    </form>
+                    <p><small>New to Digitaz? <Link className='text-primary' to="/regester">Create New Account</Link></small></p>
+                    <div className="divider">OR</div>
+                    <button className='flex text-lg font-bold bg-gray-100 rounded-box place-items-center px-10 py-2 shadow-2xl'><FcGoogle className='text-5xl' /> Continue With Google</button>
+
                 </div>
-                <div class="divider">OR</div>
-                <button className='flex text-2xl font-bold bg-gray-100 rounded-box place-items-center px-10 py-2 shadow-2xl'><FcGoogle className='text-5xl' /> Continue With Google</button>
             </div>
-        </div>
+        </div >
     );
 };
 
