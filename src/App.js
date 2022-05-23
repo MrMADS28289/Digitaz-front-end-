@@ -10,6 +10,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import Footer from './Pages/Shared/Footer';
 import RequerAuth from './Pages/RequerAuth/RequerAuth';
 import PrivateRoute from './Pages/Routes/PrivateRoute';
+import Profile from './Pages/Profile/Profile';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import AddReview from './Pages/Dashboard/AddReview';
+import ManageOrders from './Pages/Dashboard/ManageOrders';
+import AddProduct from './Pages/Dashboard/AddProduct';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 
 function App() {
 
@@ -26,15 +34,25 @@ function App() {
               <Route key={index} path={path} element={<Component />} />
             ))
           }
-          {
-            PrivateRoute.map(({ path, Component }, index) => (
-              <Route key={index} path={path} element={
-                <RequerAuth>
-                  <Component />
-                </RequerAuth>
-              }></Route>
-            ))
-          }
+
+          <Route path='/profile' element={
+            <RequerAuth>
+              <Profile />
+            </RequerAuth>} />
+
+          <Route path='/dashboard' element={
+            <RequerAuth>
+              <Dashboard />
+            </RequerAuth>
+          } >
+            <Route path='myorders' element={<MyOrders />} />
+            <Route path='review' element={<AddReview />} />
+            <Route path='orders' element={<ManageOrders />} />
+            <Route path='addProduct' element={<AddProduct />} />
+            <Route path='manageProducts' element={<ManageProducts />} />
+            <Route path='makeAdmin' element={<MakeAdmin />} />
+          </Route>
+
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />

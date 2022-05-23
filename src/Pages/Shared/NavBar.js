@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { themeChange } from 'theme-change'
 import logo from '../../Assests/logo-1.svg';
@@ -10,6 +10,8 @@ import auth from '../../firebase.init';
 
 const NavBar = ({ children }) => {
 
+    const { pathname } = useLocation();
+
     useEffect(() => {
         themeChange(false)
     }, [])
@@ -17,6 +19,7 @@ const NavBar = ({ children }) => {
 
     const handleLogout = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken');
         toast.success('Logout Success')
     }
 
@@ -25,6 +28,9 @@ const NavBar = ({ children }) => {
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
                 <div className="w-full navbar bg-gray-500 sticky top-0 z-10">
+                    {pathname.includes('dashboard') && <label for="dashboard-sidebar" className="btn btn-square btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </label>}
                     <div className="flex-1 px-2 mx-2"><Link to='/' ><img src={logo} alt="" /></Link></div>
                     <div className="flex-none lg:hidden">
                         <label for="my-drawer-3" className="btn btn-square btn-ghost">
@@ -38,7 +44,7 @@ const NavBar = ({ children }) => {
                             <li><NavLink to='/products' >Products</NavLink></li>
                             {
                                 user ?
-                                    <li><NavLink to='/dashboard' >Dashboard</NavLink></li>
+                                    <li><NavLink to='/dashboard/myorders' >Dashboard</NavLink></li>
                                     :
                                     ''
                             }
@@ -82,7 +88,7 @@ const NavBar = ({ children }) => {
                     <li><NavLink to='/products' >Products</NavLink></li>
                     {
                         user ?
-                            <li><NavLink to='/dashboard' >Dashboard</NavLink></li>
+                            <li><NavLink to='/dashboard/myorders' >Dashboard</NavLink></li>
                             :
                             ''
                     }
