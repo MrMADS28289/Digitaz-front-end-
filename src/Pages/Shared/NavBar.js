@@ -60,7 +60,7 @@ const NavBar = ({ children }) => {
 
                                     <li><NavLink to='/login' >Login</NavLink></li>
                             }
-                            <li><p>{user?.displayName}</p></li>
+                            <li><Link to='/profile' className='text-lg text-primary'>{user?.displayName}</Link></li>
                             <label className="swap swap-rotate">
                                 <input
                                     data-toggle-theme="dark,light" data-act-className="ACTIVECLASS"
@@ -104,7 +104,7 @@ const NavBar = ({ children }) => {
 
                             <li><NavLink to='/login' >Login</NavLink></li>
                     }
-                    <li><p>{user?.displayName}</p></li>
+                    <li><Link to='/profile' className='text-lg text-primary'>{user?.displayName}</Link></li>
                     <label className="swap swap-rotate">
                         <input
                             data-toggle-theme="dark,light" data-act-className="ACTIVECLASS"

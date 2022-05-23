@@ -8,6 +8,8 @@ import PublicRoute from './Pages/Routes/PublicRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './Pages/Shared/Footer';
+import RequerAuth from './Pages/RequerAuth/RequerAuth';
+import PrivateRoute from './Pages/Routes/PrivateRoute';
 
 function App() {
 
@@ -22,6 +24,15 @@ function App() {
           {
             PublicRoute.map(({ path, Component }, index) => (
               <Route key={index} path={path} element={<Component />} />
+            ))
+          }
+          {
+            PrivateRoute.map(({ path, Component }, index) => (
+              <Route key={index} path={path} element={
+                <RequerAuth>
+                  <Component />
+                </RequerAuth>
+              }></Route>
             ))
           }
           <Route path='*' element={<NotFound />} />
