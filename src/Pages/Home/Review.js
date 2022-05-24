@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 
 const Review = () => {
 
-    const { data: reviews, isLoading, error } = useQuery('reviews', () => fetch('http://localhost:5000/reviews').then(res => res.json()))
+    const { data: reviews, isLoading, error } = useQuery('reviews', () => fetch('https://powerful-fjord-17237.herokuapp.com/reviews').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />

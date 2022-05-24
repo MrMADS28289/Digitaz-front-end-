@@ -15,7 +15,7 @@ const Purcess = () => {
     const [order, setOrder] = useState();
     const [price, setPrice] = useState(0);
 
-    const { data: product, isLoading, error } = useQuery('purcess', () => fetch(`http://localhost:5000/product/${id}`).then(res => res.json()))
+    const { data: product, isLoading, error } = useQuery('purcess', () => fetch(`https://powerful-fjord-17237.herokuapp.com/product/${id}`).then(res => res.json()))
 
     if (isLoading) {
         return <Loading />
@@ -23,7 +23,7 @@ const Purcess = () => {
     if (error) {
         toast.error(error.massage)
     }
-    const { _id, name, img, minOrder, stock, unitPrice } = product;
+    const { name, img, minOrder, stock, unitPrice } = product;
 
     const handleQuantity = (e) => {
         e.preventDefault();
