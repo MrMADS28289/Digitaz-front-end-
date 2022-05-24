@@ -62,6 +62,13 @@ const MyOrders = () => {
                                         <p>Transaction id: <span className='text-success'>{transactionId}</span></p>
                                     </div>}
                                 </td>
+                                <td>
+                                    {(price && !paid) && <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-xs btn-danger'>Cancel</button></Link>}
+                                    {(price && paid) && <div>
+                                        <p><span className='text-success'>Paid</span></p>
+                                        <p>Transaction id: <span className='text-success'>{transactionId}</span></p>
+                                    </div>}
+                                </td>
                             </tr>)
                         }
 

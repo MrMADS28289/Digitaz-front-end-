@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { themeChange } from 'theme-change'
 import logo from '../../Assests/logo-1.svg';
 import auth from '../../firebase.init';
+import useAdmin from '../Hooks/useAdmin';
 
 
 const NavBar = ({ children }) => {
@@ -16,6 +17,7 @@ const NavBar = ({ children }) => {
         themeChange(false)
     }, [])
     const [user] = useAuthState(auth);
+    const [admin] = useAdmin(user);
 
     const handleLogout = () => {
         signOut(auth);
@@ -44,7 +46,7 @@ const NavBar = ({ children }) => {
                             <li><NavLink to='/products' >Products</NavLink></li>
                             {
                                 user ?
-                                    <li><NavLink to='/dashboard/myorders' >Dashboard</NavLink></li>
+                                    <li><NavLink to={!admin ? '/dashboard/myorders' : '/dashboard/orders'} >Dashboard</NavLink></li>
                                     :
                                     ''
                             }
