@@ -5,7 +5,7 @@ const DeleverdModal = ({ setModalClose, _id, productName }) => {
 
     const handleDeleverd = () => {
 
-        fetch(`http://localhost:5000/paidorders/${_id}`, {
+        fetch(`https://powerful-fjord-17237.herokuapp.com/paidorders/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
@@ -18,7 +18,7 @@ const DeleverdModal = ({ setModalClose, _id, productName }) => {
                 toast.success('Deleverd Success')
             })
     }
-    console.log(productName)
+    // console.log(productName)
 
     return (
         <div>

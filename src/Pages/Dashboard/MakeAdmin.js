@@ -7,7 +7,7 @@ import AdminModal from './AdminModal';
 const MakeAdmin = () => {
 
     const [modalClose, setModalClose] = useState(null);
-    const { data: users, isLoading, error, refetch } = useQuery('users', () => fetch('http://localhost:5000/users').then(res => res.json()))
+    const { data: users, isLoading, error, refetch } = useQuery('users', () => fetch('https://powerful-fjord-17237.herokuapp.com/users').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />

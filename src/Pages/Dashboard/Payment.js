@@ -13,7 +13,7 @@ const Payment = () => {
 
     const { paymentId } = useParams();
 
-    const { data: order, isLoading, error } = useQuery(['orders', paymentId], () => fetch(`http://localhost:5000/orders/${paymentId}`, {
+    const { data: order, isLoading, error } = useQuery(['orders', paymentId], () => fetch(`https://powerful-fjord-17237.herokuapp.com/orders/${paymentId}`, {
 
         method: 'GET',
         headers: {
