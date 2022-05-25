@@ -5,6 +5,7 @@ import BSummery from './BSummery';
 import News from './News';
 import Products from './Products';
 import Review from './Review';
+import Contact from './Contact';
 
 const Home = () => {
     return (
@@ -15,8 +16,9 @@ const Home = () => {
             <Banner />
             <Products />
             <BSummery />
-            <Review />
             <News />
+            <Review />
+            <Contact />
         </>
     );
 };

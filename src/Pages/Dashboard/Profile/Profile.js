@@ -52,11 +52,16 @@ const Profile = () => {
                         class="btn btn-xs btn-primary"
                     ><BiEdit className='text-lg mr-2' /> Update Profile</label>
                 </div>
-                {modalClose && <EditeModal
-                    profile={profile}
-                    refetch={refetch}
-                    setModalClose={setModalClose}
-                ></EditeModal>}
+                {
+                    modalClose &&
+                    <EditeModal
+                        profile={profile}
+                        refetch={refetch}
+                        setModalClose={setModalClose}
+                    >
+
+                    </EditeModal>
+                }
             </div>
         </>
     );

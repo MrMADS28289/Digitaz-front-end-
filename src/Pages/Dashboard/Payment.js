@@ -27,9 +27,9 @@ const Payment = () => {
     if (error) {
         toast.error(error.massage)
     }
-    // console.log(order);
+
     const { userName, productName, quantity, price } = order;
-    // console.log(order);
+
     return (
         <>
             <h3 className='text-2xl text-center font-bold my-8'><span className=' border-b-2 border-primary'>Payment</span></h3>

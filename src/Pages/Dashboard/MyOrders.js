@@ -3,12 +3,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
+import DeleteModal from './DeleteModal';
 
 const MyOrders = () => {
 
     const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
     const navigate = useNavigate()
+    const [modalClose, setModalClose] = useState(null);
 
     useEffect(() => {
         if (user) {
@@ -31,6 +33,10 @@ const MyOrders = () => {
                 });
         }
     }, [user, navigate, orders])
+
+    const handleOpenModal = () => {
+        setModalClose('open')
+    }
 
     return (
         <div>
@@ -61,15 +67,23 @@ const MyOrders = () => {
                                     </div>}
                                 </td>
                                 <td>
-                                    {(price && !paid) &&
-                                        <Link to={`/dashboard/payment/${_id}`}> <button className='btn btn-xs btn-danger'>Cancel</button>
-                                        </Link>}
-
-                                    {(price && paid) &&
-                                        <div>
-                                            <p><span className='text-success'>Paid</span></p>
-                                            <p>Transaction id: <span className='text-success'>{transactionId}</span></p>
-                                        </div>}
+                                    {
+                                        !paid &&
+                                        <label
+                                            onClick={handleOpenModal}
+                                            for="delete-modal"
+                                            className='btn btn-xs btn-denger'
+                                        >Cancel</label>
+                                    }
+                                    {
+                                        modalClose &&
+                                        <DeleteModal
+                                            setModalClose={setModalClose}
+                                            _id={_id}
+                                            productName={productName}
+                                        >
+                                        </DeleteModal>
+                                    }
                                 </td>
                             </tr>)
                         }

@@ -12,7 +12,7 @@ const Purcess = () => {
     const { id } = useParams();
     const [user] = useAuthState(auth);
     const [quantity, setQuantity] = useState(0);
-    const [order, setOrder] = useState();
+    const [order, setOrder] = useState(null);
     const [price, setPrice] = useState(0);
 
     const { data: product, isLoading, error } = useQuery('purcess', () => fetch(`https://powerful-fjord-17237.herokuapp.com/product/${id}`).then(res => res.json()))

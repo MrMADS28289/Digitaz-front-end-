@@ -1,12 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const OrderModal = ({ profile, refetch, setModalClose }) => {
 
-    console.log(profile);
     const { email, name } = profile;
-    const navigate = useNavigate();
 
     const handleUpdate = (e) => {
         e.preventDefault();

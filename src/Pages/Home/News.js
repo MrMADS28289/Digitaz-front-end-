@@ -3,7 +3,7 @@ import React from 'react';
 const News = () => {
     return (
 
-        <section className='mb-36 bg-white'>
+        <section className='mt-36 bg-white'>
             <h3 className='text-2xl text-center font-bold my-4'><span className=' border-b-2 border-primary'>Latest News</span></h3>
 
             <div className='bg-white grid grid-cols-1 md:grid-cols-2 gap-10 px-6 pt-10'>
