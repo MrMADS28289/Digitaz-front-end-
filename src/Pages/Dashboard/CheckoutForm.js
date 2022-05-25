@@ -12,7 +12,7 @@ const CheckoutForm = ({ order }) => {
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState('');
 
-    const { _id, userName, email, price, productName, quantity } = order;
+    const { _id, userName, email, price } = order;
 
     useEffect(() => {
         fetch('http://localhost:5000/create-payment-intent', {

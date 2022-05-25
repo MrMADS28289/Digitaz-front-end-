@@ -34,9 +34,7 @@ const MyOrders = () => {
         }
     }, [user, navigate, orders])
 
-    const handleOpenModal = () => {
-        setModalClose('open')
-    }
+    // console.log(orders);
 
     return (
         <div>
@@ -54,7 +52,7 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map(({ _id, productName, quantity, paid, price, transactionId }, index) => <tr key={_id}>
+                            orders.map(({ _id, productName, quantity, paid, price, transactionId, deleverd }, index) => <tr key={_id}>
                                 <th>{index + 1}</th>
                                 <td>{productName}</td>
                                 <td>{quantity}</td>
@@ -62,15 +60,19 @@ const MyOrders = () => {
                                 <td>
                                     {(price && !paid) && <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-xs btn-primary'>pay</button></Link>}
                                     {(price && paid) && <div>
-                                        <p><span className='text-success'>Paid</span></p>
-                                        <p>Transaction id: <span className='text-success'>{transactionId}</span></p>
+                                        {
+                                            deleverd ? <div>
+                                                <p><span className='text-success'>Paid</span></p>
+                                                <p>Transaction id: <span className='text-success'>{transactionId}</span></p>
+                                            </div> : <p><span className='text-primary'>Pending...</span></p>
+                                        }
                                     </div>}
                                 </td>
                                 <td>
                                     {
                                         !paid &&
                                         <label
-                                            onClick={handleOpenModal}
+                                            onClick={() => setModalClose('open')}
                                             for="delete-modal"
                                             className='btn btn-xs btn-denger'
                                         >Cancel</label>
