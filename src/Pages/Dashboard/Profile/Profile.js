@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init';
+import auth from '../../../firebase.init';
 import { BiEdit } from 'react-icons/bi';
 import { useQuery } from 'react-query';
-import Loading from '../Shared/Loading';
+import Loading from '../../Shared/Loading';
 import { toast } from 'react-toastify';
 import EditeModal from './EditeModal';
-import avater from '../../Assests/avater.png';
+import avater from '../../../Assests/avater.png';
 
 const Profile = () => {
 
@@ -21,9 +21,6 @@ const Profile = () => {
     if (error) {
         toast.error(error.massage)
     }
-
-    const { education, location, linkedin, phone } = profile;
-
 
     return (
         <>
@@ -43,13 +40,14 @@ const Profile = () => {
                         <h2 class="card-title">{user?.email}</h2>
                     </div>
                     <div className='m-6 font-bold'>
-                        <p>Education: {education ? education : 'you not set any education yet.'}</p>
-                        <p>Location: {location ? location : 'you not set any location yet.'}</p>
-                        <p>Phone: {phone ? phone : 'you not set any Phone number yet.'}</p>
-                        <p>Linkedin: {linkedin ? linkedin : 'you not set education yet.'}</p>
+                        <p>Education: {profile?.education ? profile?.education : 'you not set any education yet.'}</p>
+                        <p>Location: {profile?.location ? profile?.location : 'you not set any location yet.'}</p>
+                        <p>Phone: {profile?.phone ? profile?.phone : 'you not set any Phone number yet.'}</p>
+                        <p>Linkedin: {profile?.linkedin ? profile?.linkedin : 'you not set education yet.'}</p>
                     </div>
                     <label
                         for="edit-modal"
+                        disabled={!profile}
                         onClick={() => setModalClose('open')}
                         class="btn btn-xs btn-primary"
                     ><BiEdit className='text-lg mr-2' /> Update Profile</label>

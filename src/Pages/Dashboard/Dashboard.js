@@ -16,12 +16,13 @@ const Dashboard = () => {
             <div class="drawer drawer-mobile">
                 <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content">
-                    <h3 className='text-2xl text-center font-bold my-8'><span className=' border-b-2 border-primary'>Welcome to your Dashboard</span></h3>
                     <Outlet></Outlet>
                 </div>
                 <div class="drawer-side z-0">
                     <label for="dashboard-sidebar" class="drawer-overlay"></label>
                     <ul class="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content font-bold">
+
+                        <li><Link to="/dashboard/profile">My Profile</Link></li>
 
                         {
                             !admin && <li><Link to="/dashboard/myorders">My Orders</Link></li>

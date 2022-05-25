@@ -9,8 +9,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './Pages/Shared/Footer';
 import RequerAuth from './Pages/RequerAuth/RequerAuth';
-import PrivateRoute from './Pages/Routes/PrivateRoute';
-import Profile from './Pages/Profile/Profile';
+import Profile from './Pages/Dashboard/Profile/Profile';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import AddReview from './Pages/Dashboard/AddReview';
@@ -19,6 +18,7 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import Purcess from './Pages/Purcess/Purcess';
+import Payment from './Pages/Dashboard/Payment';
 
 function App() {
 
@@ -36,11 +36,6 @@ function App() {
             ))
           }
 
-          <Route path='/profile' element={
-            <RequerAuth>
-              <Profile />
-            </RequerAuth>} />
-
           <Route path='/purcess/:id' element={
             <RequerAuth>
               <Purcess />
@@ -51,7 +46,9 @@ function App() {
               <Dashboard />
             </RequerAuth>
           } >
+            <Route path='profile' element={<Profile />} />
             <Route path='myorders' element={<MyOrders />} />
+            <Route path='payment/:paymentId' element={<Payment />} />
             <Route path='review' element={<AddReview />} />
             <Route path='orders' element={<ManageOrders />} />
             <Route path='addProduct' element={<AddProduct />} />

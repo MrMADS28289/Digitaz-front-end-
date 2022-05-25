@@ -50,12 +50,6 @@ const NavBar = ({ children }) => {
                                     :
                                     ''
                             }
-                            {
-                                user ?
-                                    <li><NavLink to='/profile' >My Profile</NavLink></li>
-                                    :
-                                    ''
-                            }
                             <li><NavLink to='/portfolio' >Portfolio</NavLink></li>
                             <li><NavLink to='/blog' >Blog</NavLink></li>
                             {
@@ -94,12 +88,7 @@ const NavBar = ({ children }) => {
                             :
                             ''
                     }
-                    {
-                        user ?
-                            <li><NavLink to='/profile' >My Profile</NavLink></li>
-                            :
-                            ''
-                    }
+
                     <li><NavLink to='/portfolio' >Portfolio</NavLink></li>
                     <li><NavLink to='/blog' >Blog</NavLink></li>
                     {

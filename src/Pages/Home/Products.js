@@ -20,7 +20,7 @@ const Products = () => {
             <h3 className='text-2xl text-center font-bold my-4'><span className=' border-b-2 border-primary'>Featured Products</span></h3>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10 pl-6'>
                 {
-                    products?.slice(0, 6).map(({ _id, name, img, description, minOrder, stock, unitPrice }) => (
+                    products?.slice(0, 6)?.map(({ _id, name, img, description, minOrder, stock, unitPrice }) => (
                         <div key={_id} className="card w-80 bg-base-100 shadow-xl">
                             <figure><img className='h-36' src={img} alt="Shoes" /></figure>
                             <div className="card-body">

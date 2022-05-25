@@ -19,7 +19,6 @@ const MyOrders = () => {
                 }
             })
                 .then(res => {
-                    console.log('res', res);
                     if (res.status === 401 || res.status === 403) {
                         signOut(auth);
                         localStorage.removeItem('accessToken');
@@ -28,11 +27,10 @@ const MyOrders = () => {
                     return res.json()
                 })
                 .then(data => {
-
                     setOrders(data);
                 });
         }
-    }, [user, navigate])
+    }, [user, navigate, orders])
 
     return (
         <div>
@@ -63,11 +61,15 @@ const MyOrders = () => {
                                     </div>}
                                 </td>
                                 <td>
-                                    {(price && !paid) && <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-xs btn-danger'>Cancel</button></Link>}
-                                    {(price && paid) && <div>
-                                        <p><span className='text-success'>Paid</span></p>
-                                        <p>Transaction id: <span className='text-success'>{transactionId}</span></p>
-                                    </div>}
+                                    {(price && !paid) &&
+                                        <Link to={`/dashboard/payment/${_id}`}> <button className='btn btn-xs btn-danger'>Cancel</button>
+                                        </Link>}
+
+                                    {(price && paid) &&
+                                        <div>
+                                            <p><span className='text-success'>Paid</span></p>
+                                            <p>Transaction id: <span className='text-success'>{transactionId}</span></p>
+                                        </div>}
                                 </td>
                             </tr>)
                         }

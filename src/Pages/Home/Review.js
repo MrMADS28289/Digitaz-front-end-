@@ -24,7 +24,7 @@ const Review = () => {
             <h3 className='text-2xl text-center font-bold my-4'><span className=' border-b-2 border-primary'>Customar Reviews</span></h3>
             <Swiper pagination={true} modules={[Pagination]} className="mySwiper w-2/4">
                 {
-                    reviews.slice(0, 20).reverse().map(({ _id, name, img, description, review }) => (
+                    reviews?.slice(0, 20)?.reverse()?.map(({ _id, name, img, description, review }) => (
                         <SwiperSlide key={_id}>
                             <div class="card w-96 bg-gray-300 shadow-xl">
                                 <figure class="px-10 pt-10">

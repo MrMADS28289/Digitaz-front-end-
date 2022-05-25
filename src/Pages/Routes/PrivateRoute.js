@@ -1,4 +1,4 @@
-import Profile from '../Profile/Profile';
+import Profile from '../Dashboard/Profile/Profile';
 import Purcess from '../Purcess/Purcess';
 
 const PrivateRoute = [

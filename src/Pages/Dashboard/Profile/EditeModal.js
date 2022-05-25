@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const OrderModal = ({ profile, refetch, setModalClose }) => {
 
     console.log(profile);
-    const { _id, email, name } = profile;
+    const { email, name } = profile;
     const navigate = useNavigate();
 
     const handleUpdate = (e) => {
