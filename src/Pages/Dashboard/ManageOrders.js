@@ -8,7 +8,7 @@ import DeleteModal1 from './DeleteModal1'
 const ManageOrders = () => {
 
     const [modalClose, setModalClose] = useState(null);
-    const { data: orders, isLoading, error, refetch } = useQuery('admin', () => fetch('http://localhost:5000/allorders').then(res => res.json()))
+    const { data: orders, isLoading, error } = useQuery('orders', () => fetch('https://powerful-fjord-17237.herokuapp.com/allorders').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />
@@ -16,6 +16,7 @@ const ManageOrders = () => {
     if (error) {
         toast.error(error?.massage)
     }
+    console.log(orders);
 
     return (
         <>
@@ -42,8 +43,8 @@ const ManageOrders = () => {
                                 <td>{quantity}</td>
                                 <td>{price}</td>
                                 <td>
-                                    {(price && !paid) && <p className='text-red-500 pl-3 rounded-full bg-warning'>Not paid</p>}
-                                    {(price && paid) && <div>
+                                    {(!paid) && <p className='text-red-500 pl-3 rounded-full bg-warning'>Not paid</p>}
+                                    {(paid) && <div>
                                         {
                                             deleverd ? <div>
                                                 <p><span className='text-success'>Paid</span></p>
@@ -60,7 +61,7 @@ const ManageOrders = () => {
                                         !paid &&
                                         <label
                                             onClick={() => setModalClose('open')}
-                                            for="delete-modal1"
+                                            for="deleverd-modal1"
                                             className="btn btn-xs bg-red-500">Cancel</label>
                                     }
                                 </td>
@@ -77,7 +78,6 @@ const ManageOrders = () => {
                                     {
                                         modalClose &&
                                         <DeleteModal1
-                                            refetch={refetch}
                                             setModalClose={setModalClose}
                                             _id={_id}
                                             productName={productName}
