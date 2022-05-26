@@ -8,7 +8,7 @@ import DeleteModal1 from './DeleteModal1'
 const ManageOrders = () => {
 
     const [modalClose, setModalClose] = useState(null);
-    const { data: orders, isLoading, error, refetch } = useQuery('orders', () => fetch('http://localhost:5000/allorders').then(res => res.json()))
+    const { data: orders, isLoading, error, refetch } = useQuery('admin', () => fetch('http://localhost:5000/allorders').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />
@@ -21,8 +21,8 @@ const ManageOrders = () => {
         <>
             <h3 className='text-2xl text-center font-bold my-8'><span className=' border-b-2 border-primary'>Manage all orders</span></h3>
 
-            <div className="overflow-x-auto mx-6">
-                <table className="table w-full">
+            <div class="overflow-x-auto mx-6">
+                <table class="table w-full">
                     <thead>
                         <tr>
                             <th></th>

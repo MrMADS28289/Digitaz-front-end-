@@ -14,7 +14,6 @@ const DeleverdModal = ({ setModalClose, _id, name, refetch }) => {
             body: JSON.stringify(role)
         }).then(res => res.json())
             .then(data => {
-                console.log(data);
                 refetch()
                 setModalClose(null)
                 toast.success('Admin make Success')

@@ -32,9 +32,7 @@ const MyOrders = () => {
                     setOrders(data);
                 });
         }
-    }, [user, navigate, orders])
-
-    // console.log(orders);
+    }, [user])
 
     return (
         <div>

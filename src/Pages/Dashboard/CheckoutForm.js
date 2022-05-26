@@ -116,7 +116,7 @@ const CheckoutForm = ({ order }) => {
                     }}
                 />
                 {
-                    processing ? <Loading /> : <button type="submit" disabled={success} className='btn btn-primary btn-sm mt-4'>
+                    processing ? <Loading /> : <button type="submit" disabled={!stripe || !clientSecret || success} className='btn btn-primary btn-sm mt-4'>
                         Pay
                     </button>
                 }
