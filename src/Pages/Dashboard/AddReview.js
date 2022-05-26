@@ -40,7 +40,7 @@ const AddReview = () => {
                 <input type="text" name="name" disabled value={user?.displayName} className="input input-bordered w-full max-w-xs" />
                 <input type="email" name="email" disabled value={user?.email} className="input input-bordered w-full max-w-xs" />
                 <input type="number" name="ratings" placeholder="Give Ratings Between 1-5" className="input input-bordered w-full max-w-xs" />
-                <textarea name='description' class="textarea w-full max-w-xs" placeholder="Description"></textarea>
+                <textarea name='description' className="textarea w-full max-w-xs" placeholder="Description"></textarea>
                 <input type="submit" value="Add Review" className="btn btn-primary w-full max-w-xs" />
             </form>
         </div>

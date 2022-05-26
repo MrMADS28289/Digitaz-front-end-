@@ -8,8 +8,8 @@ const Portfolio = () => {
             <h3 className='text-2xl text-center font-bold my-8'><span className=' border-b-2 border-primary'>Developer Portfolio</span></h3>
 
             <div>
-                <div class="avatar flex justify-center">
-                    <div class="w-36 mask mask-hexagon">
+                <div className="avatar flex justify-center">
+                    <div className="w-36 mask mask-hexagon">
                         <img src={me} alt='' />
                     </div>
                 </div>
@@ -17,13 +17,13 @@ const Portfolio = () => {
                     <h3 className='text-2xl text-center text-transparent bg-clip-text bg-gradient-to-br from-accent to-secondary mt-3'>Mohammad Masum Abduss Sobhan</h3>
                     <div className='flex flex-col justify-center items-center mb-6'>
                         <h3 className='text-lg text-sky-500'>abduss.sobhan28@gmail.com</h3>
-                        <Link to='https://www.linkedin.com/in/abduss-sobhan/' class="text-lg btn-active btn-info btn-link">Linkedin profile</Link >
-                        <Link to='http://im-mr-mads.web.app/' class="text-lg btn-active btn-info btn-link">Portfolio</Link >
+                        <Link to='https://www.linkedin.com/in/abduss-sobhan/' className="text-lg btn-active btn-info btn-link">Linkedin profile</Link >
+                        <Link to='http://im-mr-mads.web.app/' className="text-lg btn-active btn-info btn-link">Portfolio</Link >
                     </div>
                     <div className='flex justify-center items-center mb-10'>
-                        <div class="card w-full md:w-2/4 lg:w-2/5 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-primary-content">
-                            <div class="card-body">
-                                <h2 class="card-title">Skills</h2>
+                        <div className="card w-full md:w-2/4 lg:w-2/5 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-primary-content">
+                            <div className="card-body">
+                                <h2 className="card-title">Skills</h2>
                                 <div className='flex'>
                                     <p> <span className='text-md font-bold'>Expertise</span> <br />
                                         1. JavaScript <br />
@@ -53,9 +53,9 @@ const Portfolio = () => {
                         </div>
                     </div>
                     <div className='flex justify-center items-center mb-10'>
-                        <div class="card w-full md:w-2/4 lg:w-2/5 bg-gradient-to-r from-purple-500 to-pink-500 text-primary-content">
-                            <div class="card-body">
-                                <h2 class="card-title">Projects</h2>
+                        <div className="card w-full md:w-2/4 lg:w-2/5 bg-gradient-to-r from-purple-500 to-pink-500 text-primary-content">
+                            <div className="card-body">
+                                <h2 className="card-title">Projects</h2>
                                 <div className='grid grid-cols-1'>
                                     <p> <span className='text-md font-bold'>1. Auto Showroom</span> <br />
                                         <Link className='btn-link btn-active' to='https://mads-auto-showroom.web.app/' >Live Site Link</Link> <br />

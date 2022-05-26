@@ -26,18 +26,18 @@ const Profile = () => {
         <>
             <h3 className='text-2xl text-center font-bold my-4'><span className=' border-b-2 border-primary'>Profile</span></h3>
             <div className='flex justify-center items-center my-10'>
-                <div class="card w-96 bg-base-100 shadow-xl">
-                    <figure class="px-10 pt-10">
-                        <div class="avatar">
-                            <div class="w-24 rounded-full">
+                <div className="card w-96 bg-base-100 shadow-xl">
+                    <figure className="px-10 pt-10">
+                        <div className="avatar">
+                            <div className="w-24 rounded-full">
                                 <img src={user?.photoURL ? user?.photoURL : avater} alt='' />
 
                             </div>
                         </div>
                     </figure>
-                    <div class="card-body items-center text-center">
-                        <h2 class="card-title">{user?.displayName}</h2>
-                        <h2 class="card-title">{user?.email}</h2>
+                    <div className="card-body items-center text-center">
+                        <h2 className="card-title">{user?.displayName}</h2>
+                        <h2 className="card-title">{user?.email}</h2>
                     </div>
                     <div className='m-6 font-bold'>
                         <p>Education: {profile?.education ? profile?.education : 'you not set any education yet.'}</p>
@@ -49,7 +49,7 @@ const Profile = () => {
                         for="edit-modal"
                         disabled={!profile}
                         onClick={() => setModalClose('open')}
-                        class="btn btn-xs btn-primary"
+                        className="btn btn-xs btn-primary"
                     ><BiEdit className='text-lg mr-2' /> Update Profile</label>
                 </div>
                 {

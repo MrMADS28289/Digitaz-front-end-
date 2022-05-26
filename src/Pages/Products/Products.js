@@ -27,9 +27,9 @@ const Products = () => {
                     products?.map(product => <Product key={product._id} product={product} />)
                 }
             </div>
-            <div class="btn-group grid grid-cols-2 my-6">
-                <button class="btn btn-outline">Previous page</button>
-                <button class="btn btn-outline">Next</button>
+            <div className="btn-group grid grid-cols-2 my-6">
+                <button className="btn btn-outline">Previous page</button>
+                <button className="btn btn-outline">Next</button>
             </div>
         </>
     );

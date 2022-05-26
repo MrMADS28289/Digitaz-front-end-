@@ -13,14 +13,14 @@ const Dashboard = () => {
             <Helmet>
                 <title>Dashboard - Digitaz LTD.</title>
             </Helmet>
-            <div class="drawer drawer-mobile">
-                <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
-                <div class="drawer-content">
+            <div className="drawer drawer-mobile">
+                <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
+                <div className="drawer-content">
                     <Outlet></Outlet>
                 </div>
-                <div class="drawer-side z-0">
-                    <label for="dashboard-sidebar" class="drawer-overlay"></label>
-                    <ul class="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content font-bold">
+                <div className="drawer-side z-0">
+                    <label for="dashboard-sidebar" className="drawer-overlay"></label>
+                    <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content font-bold">
 
                         <li><Link to="/dashboard/profile">My Profile</Link></li>
 

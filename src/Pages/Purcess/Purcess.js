@@ -65,8 +65,8 @@ const Purcess = () => {
                             price !== 0 && <p className='text-xs font-bold'>Total price: ${price}</p>
                         }
                         <form onSubmit={handleQuantity} className='my-2 flex'>
-                            <input type="number" name='quantity' placeholder="Enter quantity" class="input input-bordered input-xs w-full max-w-xs" />
-                            <input type='submit' value='Add' class="btn btn-xs btn-primary" />
+                            <input type="number" name='quantity' placeholder="Enter quantity" className="input input-bordered input-xs w-full max-w-xs" />
+                            <input type='submit' value='Add' className="btn btn-xs btn-primary" />
                         </form>
                         <div className="card-actions justify-center">
                             <label

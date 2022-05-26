@@ -20,8 +20,8 @@ const MakeAdmin = () => {
         <>
             <h3 className='text-2xl text-center font-bold my-8'><span className=' border-b-2 border-primary'>Make Admin</span></h3>
 
-            <div class="overflow-x-auto mx-6">
-                <table class="table w-full">
+            <div className="overflow-x-auto mx-6">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
