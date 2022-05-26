@@ -1,11 +1,11 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const DeleverdModal = ({ setModalClose, _id, productName }) => {
+const DeleverdModal = ({ setModalClose, storId, productName1, refetch }) => {
 
     const handleDeleverd = () => {
 
-        fetch(`https://powerful-fjord-17237.herokuapp.com/paidorders/${_id}`, {
+        fetch(`https://powerful-fjord-17237.herokuapp.com/paidorders/${storId}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
@@ -15,9 +15,10 @@ const DeleverdModal = ({ setModalClose, _id, productName }) => {
             .then(data => {
                 setModalClose(null)
                 toast.success('Deleverd Success')
+                refetch()
             })
     }
-    // console.log(productName)
+
 
     return (
         <div>
@@ -26,7 +27,7 @@ const DeleverdModal = ({ setModalClose, _id, productName }) => {
 
                 <div className="modal-box">
                     <label htmlFor="deleverd-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <p className='text-lg my-4 text-red-500'>Are you sure? Deleverd order for {productName}</p>
+                    <p className='text-lg my-4 text-red-500'>Are you sure? Deleverd order for {productName1}</p>
                     <button
                         onClick={handleDeleverd}
                         className='btn btn-xs btn-success'>Deleverd

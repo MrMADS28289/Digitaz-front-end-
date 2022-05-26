@@ -8,12 +8,20 @@ const ManageProducts = () => {
 
     const [products, isLoading, error, refetch] = useProducts();
     const [modalClose, setModalClose] = useState(null);
+    const [storId, setStorId] = useState('');
+    const [productName1, setProductName1] = useState('');
 
     if (isLoading) {
         return <Loading />
     }
     if (error) {
         toast.error(error.massage)
+    }
+
+    const handleManage = (id, name) => {
+        setModalClose('open')
+        setStorId(id)
+        setProductName1(name)
     }
 
     return (
@@ -41,7 +49,7 @@ const ManageProducts = () => {
                                 <td>
                                     {
                                         <label
-                                            onClick={() => setModalClose('open')}
+                                            onClick={() => handleManage(_id, name)}
                                             for="delete-modal2"
                                             className="btn btn-xs bg-red-500">Delete</label>
                                     }
@@ -54,8 +62,8 @@ const ManageProducts = () => {
                                         <DeleteModal2
                                             refetch={refetch}
                                             setModalClose={setModalClose}
-                                            _id={_id}
-                                            productName={name}
+                                            storId={storId}
+                                            productName1={productName1}
                                         >
                                         </DeleteModal2>
                                     }

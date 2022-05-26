@@ -7,6 +7,8 @@ import AdminModal from './AdminModal';
 const MakeAdmin = () => {
 
     const [modalClose, setModalClose] = useState(null);
+    const [storId, setStorId] = useState('');
+    const [userName1, setUserName1] = useState('');
     const { data: users, isLoading, error, refetch } = useQuery('admin', () => fetch('https://powerful-fjord-17237.herokuapp.com/users').then(res => res.json()))
 
     if (isLoading) {
@@ -14,6 +16,12 @@ const MakeAdmin = () => {
     }
     if (error) {
         toast.error(error.massage)
+    }
+
+    const handleMakeAdmin = (id, name) => {
+        setModalClose('open')
+        setStorId(id)
+        setUserName1(name)
     }
 
     return (
@@ -40,7 +48,7 @@ const MakeAdmin = () => {
                                     {
                                         role === 'admin' ? <p className='text-warning text-lg font-bold'>Admin</p> :
                                             <label
-                                                onClick={() => setModalClose('open')}
+                                                onClick={() => handleMakeAdmin(_id, name)}
                                                 for="admin-modal"
                                                 className="btn btn-xs bg-green-500">Make admin</label>
                                     }
@@ -53,8 +61,8 @@ const MakeAdmin = () => {
                                         <AdminModal
                                             refetch={refetch}
                                             setModalClose={setModalClose}
-                                            _id={_id}
-                                            name={name}
+                                            storId={storId}
+                                            userName1={userName1}
                                         >
                                         </AdminModal>
                                     }

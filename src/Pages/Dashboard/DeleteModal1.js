@@ -1,11 +1,11 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const OrderModal = ({ setModalClose, _id, productName, refetch }) => {
+const OrderModal = ({ setModalClose, storId, productName1, refetch }) => {
 
     const handleDelete = () => {
 
-        fetch(`https://powerful-fjord-17237.herokuapp.com/orders/${_id}`, {
+        fetch(`https://powerful-fjord-17237.herokuapp.com/orders/${storId}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -26,7 +26,7 @@ const OrderModal = ({ setModalClose, _id, productName, refetch }) => {
 
                 <div className="modal-box">
                     <label htmlFor="delete-modal1" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <p className='text-lg my-4 text-red-500'>Are you sure? Cancel order for {productName}</p>
+                    <p className='text-lg my-4 text-red-500'>Are you sure? Cancel order for {productName1}</p>
                     <button
                         onClick={handleDelete}
                         className='btn btn-xs btn-denger'>Cancel

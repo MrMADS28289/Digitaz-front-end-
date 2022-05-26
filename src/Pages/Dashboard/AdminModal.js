@@ -1,11 +1,11 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const DeleverdModal = ({ setModalClose, _id, name, refetch }) => {
+const DeleverdModal = ({ setModalClose, storId, userName1, refetch }) => {
 
     const handleAdmin = () => {
         const role = { role: 'admin' }
-        fetch(`https://powerful-fjord-17237.herokuapp.com/users/${_id}`, {
+        fetch(`https://powerful-fjord-17237.herokuapp.com/users/${storId}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -27,7 +27,7 @@ const DeleverdModal = ({ setModalClose, _id, name, refetch }) => {
 
                 <div className="modal-box">
                     <label htmlFor="admin-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <p className='text-lg my-4 text-red-500'>Are you sure? for make admin {name}</p>
+                    <p className='text-lg my-4 text-red-500'>Are you sure? for make admin {userName1}</p>
                     <button
                         onClick={handleAdmin}
                         className='btn btn-xs btn-success'>Make admin

@@ -11,6 +11,8 @@ const MyOrders = () => {
     const [user] = useAuthState(auth);
     const navigate = useNavigate()
     const [modalClose, setModalClose] = useState(null);
+    const [storId, setStorId] = useState('');
+    const [productName1, setProductName1] = useState('');
 
     useEffect(() => {
         if (user) {
@@ -32,7 +34,13 @@ const MyOrders = () => {
                     setOrders(data);
                 });
         }
-    }, [user, navigate])
+    }, [user, navigate, orders])
+
+    const handleModalData = (id, name) => {
+        setModalClose('open')
+        setStorId(id)
+        setProductName1(name)
+    }
 
     return (
         <div>
@@ -70,7 +78,7 @@ const MyOrders = () => {
                                     {
                                         !paid &&
                                         <label
-                                            onClick={() => setModalClose('open')}
+                                            onClick={() => handleModalData(_id, productName)}
                                             for="delete-modal"
                                             className='btn btn-xs btn-denger'
                                         >Cancel</label>
@@ -79,8 +87,8 @@ const MyOrders = () => {
                                         modalClose &&
                                         <DeleteModal
                                             setModalClose={setModalClose}
-                                            _id={_id}
-                                            productName={productName}
+                                            storId={storId}
+                                            productName1={productName1}
                                         >
                                         </DeleteModal>
                                     }

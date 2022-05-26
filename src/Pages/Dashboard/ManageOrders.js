@@ -8,7 +8,9 @@ import DeleteModal1 from './DeleteModal1'
 const ManageOrders = () => {
 
     const [modalClose, setModalClose] = useState(null);
-    const { data: orders, isLoading, error } = useQuery('orders', () => fetch('https://powerful-fjord-17237.herokuapp.com/allorders').then(res => res.json()))
+    const [storId, setStorId] = useState('');
+    const [productName1, setProductName1] = useState('');
+    const { data: orders, isLoading, error, refetch } = useQuery('orders', () => fetch('https://powerful-fjord-17237.herokuapp.com/allorders').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />
@@ -16,7 +18,12 @@ const ManageOrders = () => {
     if (error) {
         toast.error(error?.massage)
     }
-    console.log(orders);
+    // console.log(orders);
+    const handleModalData = (id, name) => {
+        setModalClose('open')
+        setStorId(id)
+        setProductName1(name)
+    }
 
     return (
         <>
@@ -50,7 +57,7 @@ const ManageOrders = () => {
                                                 <p><span className='text-success'>Paid</span></p>
                                                 <p>Transaction id: <span className='text-success'>{transactionId}</span></p>
                                             </div> : <label
-                                                onClick={() => setModalClose('open')}
+                                                onClick={() => handleModalData(_id, productName)}
                                                 for="deleverd-modal"
                                                 className='btn btn-xs bg-green-500'>Dleverd</label>
                                         }
@@ -70,8 +77,9 @@ const ManageOrders = () => {
                                         modalClose &&
                                         <DeleverdModal
                                             setModalClose={setModalClose}
-                                            _id={_id}
-                                            productName={productName}
+                                            storId={storId}
+                                            productName1={productName1}
+                                            refetch={refetch}
                                         >
                                         </DeleverdModal>
                                     }
@@ -79,8 +87,9 @@ const ManageOrders = () => {
                                         modalClose &&
                                         <DeleteModal1
                                             setModalClose={setModalClose}
-                                            _id={_id}
-                                            productName={productName}
+                                            storId={storId}
+                                            productName1={productName1}
+                                            refetch={refetch}
                                         >
                                         </DeleteModal1>
                                     }
