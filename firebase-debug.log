@@ -1,0 +1,39 @@
+[debug] [2022-05-26T15:59:21.488Z] ----------------------------------------------------------------------
+[debug] [2022-05-26T15:59:21.491Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\yesfo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-05-26T15:59:21.491Z] CLI Version:   10.9.2
+[debug] [2022-05-26T15:59:21.491Z] Platform:      win32
+[debug] [2022-05-26T15:59:21.492Z] Node Version:  v16.13.1
+[debug] [2022-05-26T15:59:21.501Z] Time:          Thu May 26 2022 21:59:21 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-05-26T15:59:21.502Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-26T15:59:21.580Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-26T15:59:21.581Z] > authorizing via signed-in user (yesform2018@gmail.com)
+[debug] [2022-05-26T15:59:21.581Z] [iam] checking project digitaz for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-05-26T15:59:21.583Z] > refreshing access token with scopes: []
+[debug] [2022-05-26T15:59:21.583Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-05-26T15:59:21.647Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2022-05-26T15:59:21.648Z] > refreshing access token with scopes: []
+[debug] [2022-05-26T15:59:21.648Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-05-26T15:59:21.654Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2022-05-26T15:59:21.659Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (C:\Users\yesfo\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:145:12)
+    at refreshTokens (C:\Users\yesfo\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:485:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Client.getAccessToken (C:\Users\yesfo\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:147:23)
+    at async Client.addAuthHeader (C:\Users\yesfo\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:138:21)
+    at async Client.request (C:\Users\yesfo\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:94:34)
+    at async getFirebaseProject (C:\Users\yesfo\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:290:21)
+    at async getDefaultHostingSite (C:\Users\yesfo\AppData\Roaming\npm\node_modules\firebase-tools\lib\getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (C:\Users\yesfo\AppData\Roaming\npm\node_modules\firebase-tools\lib\requireHostingSite.js:9:18)
+    at async Object.fn (C:\Users\yesfo\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\deploy.js:73:9)
+    at async C:\Users\yesfo\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:188:17
+[error] 
+[error] Error: Failed to get Firebase project digitaz. Please make sure the project exists and your account has permission to access it.

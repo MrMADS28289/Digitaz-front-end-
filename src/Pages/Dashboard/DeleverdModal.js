@@ -13,7 +13,6 @@ const DeleverdModal = ({ setModalClose, _id, productName }) => {
             },
         }).then(res => res.json())
             .then(data => {
-                console.log(data);
                 setModalClose(null)
                 toast.success('Deleverd Success')
             })
