@@ -15,6 +15,7 @@ const Products = () => {
         toast.error(error.massage)
     }
 
+    console.log(products);
     return (
         <>
             <h3 className='text-2xl text-center font-bold my-4'><span className=' border-b-2 border-primary'>Featured Products</span></h3>
@@ -22,7 +23,7 @@ const Products = () => {
                 {
                     products?.slice(0, 6)?.map(({ _id, name, img, description, minOrder, stock, unitPrice }) => (
                         <div key={_id} className="card w-80 bg-base-100 shadow-xl">
-                            <figure><img className='h-36' src={img} alt="Shoes" /></figure>
+                            <figure><img className='h-36' src={img} alt={name} /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">{name}</h2>
                                 <h4 className='text-sm font-bold'>Unit Price: ${unitPrice}</h4>

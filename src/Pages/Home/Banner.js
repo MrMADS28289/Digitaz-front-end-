@@ -12,11 +12,11 @@ const Banner = () => {
     return (
         <section>
             <div>
-                <div className="carousel w-full">
-                    <div id="item1" className="carousel-item w-full">
-                        <div className="hero min-h-screen bg-base-200">
-                            <div className="hero-content flex-col lg:flex-row">
-                                <img src={slide2} className="max-w-sm rounded-lg shadow-2xl" alt='' />
+                <div className="carousel w-full rounded-none">
+                    <div id="item1" className="carousel-item w-full rounded-none">
+                        <div class="card w-full bg-base-100 shadow-xl image-full z-0">
+                            <figure> <img src={slide2} alt='' /></figure>
+                            <div class="card-body justify-center items-center">
                                 <div>
                                     <h1 className="text-5xl font-bold">Big Choice Of Plumbing Products!</h1>
                                     <p className="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
@@ -26,9 +26,9 @@ const Banner = () => {
                         </div>
                     </div>
                     <div id="item2" className="carousel-item w-full">
-                        <div className="hero min-h-screen bg-base-200">
-                            <div className="hero-content flex-col lg:flex-row">
-                                <img src={slide} className="max-w-sm rounded-lg shadow-2xl" alt='' />
+                        <div class="card w-full bg-base-100 shadow-xl image-full z-0">
+                            <figure><img src={slide} alt='' /></figure>
+                            <div class="card-body justify-center items-center">
                                 <div>
                                     <h1 className="text-5xl font-bold">Scrowdrivers Proffessional Tools!</h1>
                                     <p className="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
@@ -38,9 +38,9 @@ const Banner = () => {
                         </div>
                     </div>
                     <div id="item3" className="carousel-item w-full">
-                        <div className="hero min-h-screen bg-base-200">
-                            <div className="hero-content flex-col lg:flex-row">
-                                <img src={slide3} className="max-w-sm rounded-lg shadow-2xl" alt='' />
+                        <div class="card w-full bg-base-100 shadow-xl image-full z-0">
+                            <figure><img src={slide3} alt='' /></figure>
+                            <div class="card-body justify-center items-center">
                                 <div>
                                     <h1 className="text-5xl font-bold">Big Choice Of Plumbing Products!</h1>
                                     <p className="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
@@ -50,9 +50,9 @@ const Banner = () => {
                         </div>
                     </div>
                     <div id="item4" className="carousel-item w-full">
-                        <div className="hero min-h-screen bg-base-200">
-                            <div className="hero-content flex-col lg:flex-row">
-                                <img src={slide1} className="max-w-sm rounded-lg shadow-2xl" alt='' />
+                        <div class="card w-full bg-base-100 shadow-xl image-full z-0">
+                            <figure><img src={slide1} alt='' /></figure>
+                            <div class="card-body justify-center items-center">
                                 <div>
                                     <h1 className="text-5xl font-bold">Scrowdrivers Proffessional Tools!</h1>
                                     <p className="py-6">We provide best qualitis products. An ever, We ar most trusted in this world Provident cupiditate voluptatem et in. exercitationem quasi.</p>
