@@ -63,7 +63,7 @@ const NavBar = ({ children }) => {
 
                                     <li><NavLink to='/login' >Login</NavLink></li>
                             }
-                            <li><Link to='/profile' className='text-lg text-violet-300'>{user?.displayName}</Link></li>
+                            <li><Link to='/dashboard/profile' className='text-lg text-violet-300'>{user?.displayName}</Link></li>
                             <label className="swap swap-rotate">
                                 <input
                                     onClick={() => setDark(!dark)} data-act-className="ACTIVECLASS"
